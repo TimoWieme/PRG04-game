@@ -7,27 +7,30 @@ export class Game {
 
     private screen: gameObject
 
-    constructor(){
+    // Open startScreen when the game is started
+    constructor() {
         this.showStartScreen()
         this.gameLoop()
     }
 
-    public showStartScreen(){
+    // Function to make a new startScreen
+    public showStartScreen() {
         this.screen = new StartScreen(this)
     }
 
-    public showGameScreen(){
+    // Create Gamescreen
+    public showGameScreen() {
         this.screen = new GameScreen(this)
     }
 
-    public showEndScreen(){
-        console.log("Maak een nieuw endScreen.")
+    // Create EndScreen
+    public showEndScreen() {
         this.screen = new EndScreen(this)
     }
 
-    private gameLoop(){
+    private gameLoop() {
         this.screen.update()
-        requestAnimationFrame(()=>this.gameLoop())
+        requestAnimationFrame(() => this.gameLoop())
     }
 }
 

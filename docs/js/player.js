@@ -16,8 +16,11 @@ export class Player extends gameObject {
         this.y = Math.floor((Math.random() * (window.innerHeight - this.div.clientHeight - 215) + 115));
     }
     update() {
-        this.y += this.verticalSpeed;
         super.update();
+        let newy = this.y + this.verticalSpeed;
+        if (newy > 0 && newy + this.getBoundingRect().height < window.innerHeight) {
+            this.y = newy;
+        }
     }
     onKeyDown(e) {
         switch (e.key) {

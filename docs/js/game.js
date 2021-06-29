@@ -13,7 +13,6 @@ export class Game {
         this.screen = new GameScreen(this);
     }
     showEndScreen() {
-        console.log("Maak een nieuw endScreen.");
         this.screen = new EndScreen(this);
     }
     gameLoop() {
